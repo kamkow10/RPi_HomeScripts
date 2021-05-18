@@ -14,16 +14,18 @@ if __name__ == '__main__':
     power = 0
     light.start(power)
     up = True
+    step = 5
     while True:
+        print(power)
         if up:
-            power += 2
+            power += step
             if power > 100:
                 up = False
-                power -= 4
+                power -= step * 2
         else:
-            power -= 2
+            power -= step
             if power < 0:
                 up = True
-                power += 4
+                power += step * 2
         light.ChangeDutyCycle(power)
         sleep(0.1)
