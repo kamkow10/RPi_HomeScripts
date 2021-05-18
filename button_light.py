@@ -18,7 +18,7 @@ if __name__ == '__main__':
             GPIO.wait_for_edge(21, GPIO.FALLING)
             light_on = not light_on
             GPIO.output(12, light_on)
-            sleep(1)
+            sleep(0.05)
     except KeyboardInterrupt:
         print('Program end')
     GPIO.cleanup()
