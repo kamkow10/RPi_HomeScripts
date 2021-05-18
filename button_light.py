@@ -10,6 +10,7 @@ def GPIOPreparation():
 
 
 if __name__ == '__main__':
+    GPIOPreparation()
     light_on = False
     GPIO.output(12, light_on)
     try:
