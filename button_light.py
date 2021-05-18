@@ -6,7 +6,7 @@ def GPIOPreparation():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(12, GPIO.OUT)
-    GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.FALLING)
+    GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 if __name__ == '__main__':
