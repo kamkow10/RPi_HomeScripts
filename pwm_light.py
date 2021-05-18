@@ -14,7 +14,7 @@ if __name__ == '__main__':
     power = 0
     light.start(power)
     up = True
-    step = 5
+    step = 1
     while True:
         print(power)
         if up:
@@ -28,4 +28,4 @@ if __name__ == '__main__':
                 up = True
                 power += step * 2
         light.ChangeDutyCycle(power)
-        sleep(0.1)
+        sleep(0.01)
