@@ -16,7 +16,6 @@ if __name__ == '__main__':
     up = True
     step = 1
     while True:
-        print(power)
         if up:
             power += step
             if power > 100:
