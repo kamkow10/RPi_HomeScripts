@@ -43,8 +43,8 @@ def startCountdown():
 
 
 if __name__ == '__main__':
-    GPIOPreparation()
     startCountdown()
+    GPIOPreparation()
     try:
         while True:
             moveForward()
