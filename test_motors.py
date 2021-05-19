@@ -12,7 +12,7 @@ def pauseLog(text):
     global LOG_NUMBER
     print('%d: %s' % (LOG_NUMBER, text))
     LOG_NUMBER += 1
-    sleep(1)
+    sleep(3)
 
 
 def GPIOPreparation():
@@ -60,9 +60,9 @@ def startCountdown():
 
 
 if __name__ == '__main__':
-    GPIOPreparation()
-    startCountdown()
     try:
+        GPIOPreparation()
+        startCountdown()
         while True:
             moveForward()
             sleep(5)
