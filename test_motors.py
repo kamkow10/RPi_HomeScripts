@@ -19,20 +19,15 @@ def GPIOPreparation():
     GPIO.setmode(GPIO.BCM)
 
     GPIO.setup(LEFT_MOTOR_PIN_1, GPIO.OUT)
-    pauseLog('setting')
-    GPIO.setup(LEFT_MOTOR_PIN_2, GPIO.OUT)
-    pauseLog('setting')
-    GPIO.setup(RIGHT_MOTOR_PIN_1, GPIO.OUT)
-    pauseLog('setting')
-    GPIO.setup(RIGHT_MOTOR_PIN_2, GPIO.OUT)
-    pauseLog('setting')
-
     GPIO.output(LEFT_MOTOR_PIN_1, 0)
     pauseLog('setting')
+    GPIO.setup(LEFT_MOTOR_PIN_2, GPIO.OUT)
     GPIO.output(LEFT_MOTOR_PIN_2, 0)
     pauseLog('setting')
+    GPIO.setup(RIGHT_MOTOR_PIN_1, GPIO.OUT)
     GPIO.output(RIGHT_MOTOR_PIN_1, 0)
     pauseLog('setting')
+    GPIO.setup(RIGHT_MOTOR_PIN_2, GPIO.OUT)
     GPIO.output(RIGHT_MOTOR_PIN_2, 0)
     pauseLog('setting')
 
