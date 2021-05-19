@@ -6,17 +6,35 @@ LEFT_MOTOR_PIN_2 = 21
 RIGHT_MOTOR_PIN_1 = 5
 RIGHT_MOTOR_PIN_2 = 6
 
+LOG_NUMBER = 1
+
+
+def pauseLog(text):
+    print('%d: %s' % (LOG_NUMBER, text))
+    LOG_NUMBER += 1
+    sleep(1)
+
 
 def GPIOPreparation():
     GPIO.setmode(GPIO.BCM)
+
     GPIO.setup(LEFT_MOTOR_PIN_1, GPIO.OUT)
+    pauseLog('setting')
     GPIO.setup(LEFT_MOTOR_PIN_2, GPIO.OUT)
+    pauseLog('setting')
     GPIO.setup(RIGHT_MOTOR_PIN_1, GPIO.OUT)
+    pauseLog('setting')
     GPIO.setup(RIGHT_MOTOR_PIN_2, GPIO.OUT)
+    pauseLog('setting')
+
     GPIO.output(LEFT_MOTOR_PIN_1, 0)
+    pauseLog('setting')
     GPIO.output(LEFT_MOTOR_PIN_2, 0)
+    pauseLog('setting')
     GPIO.output(RIGHT_MOTOR_PIN_1, 0)
+    pauseLog('setting')
     GPIO.output(RIGHT_MOTOR_PIN_2, 0)
+    pauseLog('setting')
 
 
 def moveForward():
@@ -42,8 +60,8 @@ def startCountdown():
 
 
 if __name__ == '__main__':
-    startCountdown()
     GPIOPreparation()
+    startCountdown()
     try:
         while True:
             moveForward()
