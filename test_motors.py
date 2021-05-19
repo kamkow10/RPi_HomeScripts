@@ -9,7 +9,6 @@ RIGHT_MOTOR_PIN_2 = 6
 
 def GPIOPreparation():
     GPIO.setmode(GPIO.BCM)
-    GPIO.setwarnings(False)
     GPIO.setup(LEFT_MOTOR_PIN_1, GPIO.OUT)
     GPIO.setup(LEFT_MOTOR_PIN_2, GPIO.OUT)
     GPIO.setup(RIGHT_MOTOR_PIN_1, GPIO.OUT)
