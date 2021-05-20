@@ -19,31 +19,31 @@ def GPIOPreparation():
     GPIO.setmode(GPIO.BCM)
 
     GPIO.setup(LEFT_MOTOR_PIN_1, GPIO.OUT)
-    GPIO.output(LEFT_MOTOR_PIN_1, 0)
+    GPIO.output(LEFT_MOTOR_PIN_1, GPIO.LOW)
     pauseLog('setting')
     GPIO.setup(LEFT_MOTOR_PIN_2, GPIO.OUT)
-    GPIO.output(LEFT_MOTOR_PIN_2, 0)
+    GPIO.output(LEFT_MOTOR_PIN_2, GPIO.LOW)
     pauseLog('setting')
     GPIO.setup(RIGHT_MOTOR_PIN_1, GPIO.OUT)
-    GPIO.output(RIGHT_MOTOR_PIN_1, 0)
+    GPIO.output(RIGHT_MOTOR_PIN_1, GPIO.LOW)
     pauseLog('setting')
     GPIO.setup(RIGHT_MOTOR_PIN_2, GPIO.OUT)
-    GPIO.output(RIGHT_MOTOR_PIN_2, 0)
+    GPIO.output(RIGHT_MOTOR_PIN_2, GPIO.LOW)
     pauseLog('setting')
 
 
 def moveForward():
-    GPIO.output(LEFT_MOTOR_PIN_1, 1)
-    GPIO.output(LEFT_MOTOR_PIN_2, 0)
-    GPIO.output(RIGHT_MOTOR_PIN_1, 1)
-    GPIO.output(RIGHT_MOTOR_PIN_2, 0)
+    GPIO.output(LEFT_MOTOR_PIN_1, GPIO.HIGH)
+    GPIO.output(LEFT_MOTOR_PIN_2, GPIO.LOW)
+    GPIO.output(RIGHT_MOTOR_PIN_1, GPIO.HIGH)
+    GPIO.output(RIGHT_MOTOR_PIN_2, GPIO.LOW)
 
 
 def moveStop():
-    GPIO.output(LEFT_MOTOR_PIN_1, 0)
-    GPIO.output(LEFT_MOTOR_PIN_2, 0)
-    GPIO.output(RIGHT_MOTOR_PIN_1, 0)
-    GPIO.output(RIGHT_MOTOR_PIN_2, 0)
+    GPIO.output(LEFT_MOTOR_PIN_1, GPIO.LOW)
+    GPIO.output(LEFT_MOTOR_PIN_2, GPIO.LOW)
+    GPIO.output(RIGHT_MOTOR_PIN_1, GPIO.LOW)
+    GPIO.output(RIGHT_MOTOR_PIN_2, GPIO.LOW)
 
 
 def startCountdown():
