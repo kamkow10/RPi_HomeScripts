@@ -38,6 +38,20 @@ if __name__ == '__main__':
     for i in range(3):
         GPIO.output(12, 1)
         sleep(0.5)
+        GPIO.output(12, 0)
+        GPIO.output(16, 1)
+        sleep(0.5)
+        GPIO.output(16, 0)
+        GPIO.output(20, 1)
+        sleep(0.5)
+        GPIO.output(20, 0)
+        GPIO.output(21, 1)
+        sleep(0.5)
+        GPIO.output(21, 0)
+
+    for i in range(2):
+        GPIO.output(12, 1)
+        sleep(0.5)
         GPIO.output(16, 1)
         sleep(0.5)
         GPIO.output(20, 1)
@@ -53,13 +67,15 @@ if __name__ == '__main__':
         GPIO.output(21, 0)
         sleep(0.5)
 
-
     light1 = GPIO.PWM(12, 50)
     light2 = GPIO.PWM(16, 50)
     light3 = GPIO.PWM(20, 50)
     light4 = GPIO.PWM(21, 50)
     power = 0
-    light.start(power)
+    light1.start(power)
+    light2.start(power)
+    light3.start(power)
+    light4.start(power)
     oddUp = True
     step = 1
     while True:
