@@ -35,7 +35,7 @@ if __name__ == '__main__':
     GPIO.output(20, 0)
     GPIO.output(21, 0)
 
-    for i in range(3):
+    for i in range(2):
         GPIO.output(12, 1)
         sleep(0.5)
         GPIO.output(12, 0)
@@ -84,11 +84,13 @@ if __name__ == '__main__':
             if power > 100:
                 oddUp = False
                 power -= step * 2
+                sleep(1)
         else:
             power -= step
             if power < 0:
                 oddUp = True
                 power += step * 2
+                sleep(1)
         light1.ChangeDutyCycle(power)
         light2.ChangeDutyCycle(100 - power)
         light3.ChangeDutyCycle(power)
