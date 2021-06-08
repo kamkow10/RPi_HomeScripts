@@ -45,9 +45,19 @@ def moveForwardRight():
     GPIO.output(LEFT_MOTOR_PIN_2, 0)
 
 
+def moveForwardLeft():
+    GPIO.output(RIGHT_MOTOR_PIN_1, 1)
+    GPIO.output(RIGHT_MOTOR_PIN_2, 0)
+
+
 def moveBackRight():
     GPIO.output(LEFT_MOTOR_PIN_1, 0)
     GPIO.output(LEFT_MOTOR_PIN_2, 1)
+
+
+def moveBackLeft():
+    GPIO.output(RIGHT_MOTOR_PIN_1, 0)
+    GPIO.output(RIGHT_MOTOR_PIN_2, 1)
 
 
 def startCountdown():
@@ -62,18 +72,33 @@ if __name__ == '__main__':
     try:
         GPIOPreparation()
         startCountdown()
+
+        # print('forward')
+        # moveForwardRight()
+        # sleep(3)
+        # print('back')
+        # moveBackRight()
+        # sleep(3)
+        # print('stop')
+        # moveStop()
+        # sleep(3)
+        # print('forward')
+        # moveForwardRight()
+        # sleep(3)
+
         print('forward')
-        moveForwardRight()
+        moveForwardLeft()
         sleep(3)
         print('back')
-        moveBackRight()
+        moveBackLeft()
         sleep(3)
         print('stop')
         moveStop()
         sleep(3)
         print('forward')
-        moveForwardRight()
+        moveForwardLeft()
         sleep(3)
+
         print('end')
     except KeyboardInterrupt:
         print('Program end')
