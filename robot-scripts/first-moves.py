@@ -3,8 +3,8 @@ from time import *
 
 LEFT_MOTOR_PIN_1 = 12   # 3A
 LEFT_MOTOR_PIN_2 = 16   # 4A
-RIGHT_MOTOR_PIN_1 = 20   # 1A
-RIGHT_MOTOR_PIN_2 = 21   # 2A
+RIGHT_MOTOR_PIN_1 = 21   # 1A
+RIGHT_MOTOR_PIN_2 = 20   # 2A
 
 
 def GPIOPreparation():
