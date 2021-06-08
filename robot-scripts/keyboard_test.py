@@ -3,9 +3,5 @@ from time import *
 
 
 if __name__ == '__main__':
-    while True:
-        try:
-            keyboard.add_hotkey('space', lambda: print('space'))
-        except KeyboardInterrupt:
-            break
+    keyboard.add_hotkey('space', lambda: print('space'))
     print('end')
