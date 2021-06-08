@@ -41,8 +41,8 @@ def moveStop():
 
 
 def moveForwardRight():
-    GPIO.output(LEFT_MOTOR_PIN_1, 0)
-    GPIO.output(LEFT_MOTOR_PIN_2, 1)
+    GPIO.output(LEFT_MOTOR_PIN_1, 1)
+    GPIO.output(LEFT_MOTOR_PIN_2, 0)
 
 
 def startCountdown():
@@ -59,6 +59,7 @@ if __name__ == '__main__':
         startCountdown()
         moveForwardRight()
         sleep(1)
+        print('stop')
         moveStop()
     except KeyboardInterrupt:
         print('Program end')
