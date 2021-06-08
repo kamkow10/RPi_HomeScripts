@@ -3,7 +3,7 @@ from time import *
 
 
 if __name__ == '__main__':
-    keyboard.on_press_key('space', {print('space')})
+    keyboard.on_press({print('space')})
     while True:
         try:
             sleep(1)
