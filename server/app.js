@@ -23,6 +23,7 @@ app.post('/forward', async (req, res) => {
     currentPythonProcess = spawn('python3', ['../robot-moves/move_forward.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
+        console.log('elo koniec');
         isCurrentPythonProcessClosed = true;
     });
     res.end()
