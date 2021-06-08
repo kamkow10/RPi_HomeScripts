@@ -1,4 +1,5 @@
 import keyboard
+from time import *
 
 
 if __name__ == '__main__':
