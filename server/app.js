@@ -20,7 +20,7 @@ async function killLastPythonProcess() {
 app.post('/forward', async (req, res) => {
     await killLastPythonProcess();
     console.log('forward');
-    currentPythonProcess = child_process.spawn('python', ['../robot-moves/move_forward.py']);
+    currentPythonProcess = child_process.spawn('python3', ['../robot-moves/move_forward.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
         isCurrentPythonProcessClosed = true;
@@ -31,7 +31,7 @@ app.post('/forward', async (req, res) => {
 app.post('/back', async (req, res) => {
     await killLastPythonProcess();
     console.log('back');
-    currentPythonProcess = child_process.spawn('python', ['../robot-moves/move_back.py']);
+    currentPythonProcess = child_process.spawn('python3', ['../robot-moves/move_back.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
         isCurrentPythonProcessClosed = true;
@@ -42,7 +42,7 @@ app.post('/back', async (req, res) => {
 app.post('/left', async (req, res) => {
     await killLastPythonProcess();
     console.log('left');
-    currentPythonProcess = child_process.spawn('python', ['../robot-moves/move_left.py']);
+    currentPythonProcess = child_process.spawn('python3', ['../robot-moves/move_left.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
         isCurrentPythonProcessClosed = true;
@@ -53,7 +53,7 @@ app.post('/left', async (req, res) => {
 app.post('/right', async (req, res) => {
     await killLastPythonProcess();
     console.log('right');
-    currentPythonProcess = child_process.spawn('python', ['../robot-moves/move_right.py']);
+    currentPythonProcess = child_process.spawn('python3', ['../robot-moves/move_right.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
         isCurrentPythonProcessClosed = true;
@@ -64,7 +64,7 @@ app.post('/right', async (req, res) => {
 app.post('/stop', async (req, res) => {
     await killLastPythonProcess();
     console.log('stop');
-    currentPythonProcess = child_process.spawn('python', ['../robot-moves/move_stop.py']);
+    currentPythonProcess = child_process.spawn('python3', ['../robot-moves/move_stop.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
         isCurrentPythonProcessClosed = true;
