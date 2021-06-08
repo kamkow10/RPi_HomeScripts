@@ -57,8 +57,6 @@ if __name__ == '__main__':
     try:
         GPIOPreparation()
         startCountdown()
-        sleep(1)
-        moveStop()
         print('stop')
     except KeyboardInterrupt:
         print('Program end')
