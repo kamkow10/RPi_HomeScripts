@@ -93,6 +93,16 @@ if __name__ == '__main__':
         moveStop()
         sleep(3)
 
+        print('forward all')
+        moveForward()
+        sleep(3)
+        print('back all')
+        moveBack()
+        sleep(3)
+        print('stop')
+        moveStop()
+        sleep(3)
+
         print('end')
     except KeyboardInterrupt:
         print('Program end')
