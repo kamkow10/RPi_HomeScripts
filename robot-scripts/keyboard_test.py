@@ -1,14 +1,21 @@
-import keyboard
-from time import *
+from pynput.keyboard import Key, Listener
+
+
+def on_press(key):
+    print('{0} pressed'.format(
+        key))
+
+
+def on_release(key):
+    print('{0} release'.format(
+        key))
+    if key == Key.esc:
+        # Stop listener
+        return False
 
 
 if __name__ == '__main__':
-    while True:
-        try:
-            if keyboard.is_pressed('q'):
-                print('You Pressed A Key!')
-                break
-            sleep(0.01)
-        except KeyboardInterrupt:
-            break
-    print('end')
+    with Listener(
+            on_press=on_press,
+            on_release=on_release) as listener:
+        listener.join()
