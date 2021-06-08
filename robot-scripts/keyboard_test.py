@@ -3,6 +3,12 @@ from time import *
 
 
 if __name__ == '__main__':
-    keyboard.add_hotkey('space', lambda: print('space'))
-    keyboard.wait()
+    while True:
+        try:
+            if keyboard.is_pressed('q'):
+                print('You Pressed A Key!')
+                break
+            sleep(0.01)
+        except KeyboardInterrupt:
+            break
     print('end')
