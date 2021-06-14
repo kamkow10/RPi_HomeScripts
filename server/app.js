@@ -73,6 +73,10 @@ app.post('/stop', async (req, res) => {
     res.end()
 });
 
+app.post('*', async (req, res) => {
+    console.log('unknown request');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
