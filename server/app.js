@@ -40,10 +40,10 @@ app.post('/back', async (req, res) => {
     res.end()
 });
 
-app.post('/left', async (req, res) => {
+app.post('/forward-left', async (req, res) => {
     await killLastPythonProcess();
     console.log('left');
-    currentPythonProcess = spawn('python3', ['../robot-moves/move_left.py']);
+    currentPythonProcess = spawn('python3', ['../robot-moves/move_forward_left.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
         isCurrentPythonProcessClosed = true;
@@ -51,10 +51,32 @@ app.post('/left', async (req, res) => {
     res.end()
 });
 
-app.post('/right', async (req, res) => {
+app.post('/forward-right', async (req, res) => {
     await killLastPythonProcess();
     console.log('right');
-    currentPythonProcess = spawn('python3', ['../robot-moves/move_right.py']);
+    currentPythonProcess = spawn('python3', ['../robot-moves/move_forward_right.py']);
+    isCurrentPythonProcessClosed = false;
+    currentPythonProcess.on('close', (code) => {
+        isCurrentPythonProcessClosed = true;
+    });
+    res.end()
+});
+
+app.post('/back-left', async (req, res) => {
+    await killLastPythonProcess();
+    console.log('left');
+    currentPythonProcess = spawn('python3', ['../robot-moves/move_back_left.py']);
+    isCurrentPythonProcessClosed = false;
+    currentPythonProcess.on('close', (code) => {
+        isCurrentPythonProcessClosed = true;
+    });
+    res.end()
+});
+
+app.post('/back-right', async (req, res) => {
+    await killLastPythonProcess();
+    console.log('right');
+    currentPythonProcess = spawn('python3', ['../robot-moves/move_back_right.py']);
     isCurrentPythonProcessClosed = false;
     currentPythonProcess.on('close', (code) => {
         isCurrentPythonProcessClosed = true;
